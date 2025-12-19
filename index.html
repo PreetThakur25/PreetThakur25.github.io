@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PPSB | Electrical & Software Engineer</title>
+    <title>PPSB | AI & Embedded Systems Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --mustard: #EAB308;
-            --charcoal: #111111;
-            --off-white: #F5F5F4;
-            --slate-grey: #262626;
+            --accent: #EAB308;
+            --accent-muted: rgba(234, 179, 8, 0.2);
+            --bg-dark: #0A0A0B;
+            --bg-card: #141415;
+            --text-main: #F4F4F5;
+            --text-dim: #A1A1AA;
+            --border-dim: rgba(255, 255, 255, 0.05);
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--charcoal);
-            color: var(--off-white);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             overflow-x: hidden;
+            letter-spacing: -0.01em;
         }
 
-        .mono { font-family: 'JetBrains Mono', monospace; }
+        h1,
+        h2,
+        h3,
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
 
-        /* Electrical Grid Background */
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Elegant Grid Background */
         .bg-grid {
-            background-image: radial-gradient(circle, #333 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
 
-        .mustard-border {
-            border: 2px solid var(--mustard);
+        /* Glassmorphism */
+        .glass {
+            background: rgba(20, 20, 21, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-dim);
         }
 
-        .mustard-bg {
-            background-color: var(--mustard);
+        .glass-hover:hover {
+            border-color: rgba(234, 179, 8, 0.3);
+            background: rgba(20, 20, 21, 0.9);
+            transform: translateY(-4px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
+        /* Reveal Animations */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -50,69 +76,126 @@
             transform: translateY(0);
         }
 
-        /* Horizontal Scroll Container */
+        /* Industrial but Premium Buttons */
+        .btn-premium {
+            position: relative;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: var(--bg-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--accent);
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
+        }
+
+        .btn-premium:hover {
+            background: transparent;
+            color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-muted);
+        }
+
+        .btn-outline {
+            padding: 14px 28px;
+            border: 1px solid var(--border-dim);
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Marquee Animation */
+        .marquee-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 0.75rem));
+            }
+        }
+
+        /* Horizontal Scroll Mask */
+        .scroll-mask {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            overflow: hidden;
+        }
+
         .horizontal-scroll {
             display: flex;
             overflow-x: auto;
-            gap: 2rem;
-            padding-bottom: 2rem;
-            scrollbar-width: none; /* Firefox */
+            gap: 1.5rem;
+            padding: 2rem 0;
+            scrollbar-width: none;
         }
+
         .horizontal-scroll::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
         }
 
-        .circuit-line {
-            position: absolute;
-            background: var(--mustard);
-            opacity: 0.3;
+        /* Custom Project Card Style */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            padding: 2rem;
+            transition: all 0.3s ease;
         }
 
-        /* Industrial Button */
-        .btn-industrial {
-            position: relative;
-            padding: 12px 24px;
-            background: var(--mustard);
-            color: var(--charcoal);
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: all 0.2s;
-            border: 2px solid var(--mustard);
-        }
-        .btn-industrial:hover {
-            background: transparent;
-            color: var(--mustard);
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
         }
 
-        .image-container {
-            position: relative;
-            background: var(--slate-grey);
-            border: 2px solid var(--mustard);
+        /* Decorative Pulse */
+        .glow-pulse {
+            box-shadow: 0 0 15px var(--accent-muted);
+            animation: pulse 2s infinite;
         }
-        .image-container::after {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--mustard);
-            z-index: -1;
-            transition: all 0.3s;
-        }
-        .image-container:hover::after {
-            top: 0;
-            left: 0;
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(234, 179, 8, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+            }
         }
     </style>
 </head>
+
 <body class="bg-grid">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#111]/90 backdrop-blur-md border-b-2 border-yellow-600/20">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-2xl font-bold mono text-yellow-500 tracking-tighter">PREET_PRATAP_</span>
-            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest">
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <span class="text-xl font-bold mono text-yellow-500 tracking-tighter">PREET_PRATAP_</span>
+            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-[0.3em]">
                 <a href="#about" class="hover:text-yellow-500 transition-colors">01. About</a>
                 <a href="#hardware" class="hover:text-yellow-500 transition-colors">02. Hardware</a>
                 <a href="#projects" class="hover:text-yellow-500 transition-colors">03. Projects</a>
@@ -123,55 +206,74 @@
 
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center px-6 relative overflow-hidden">
-        <div class="absolute top-1/4 -right-20 w-96 h-96 border-4 border-yellow-500/10 rounded-full animate-pulse"></div>
-        
+        <div class="absolute top-1/4 -right-20 w-96 h-96 border border-yellow-500/10 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-1/4 -left-20 w-64 h-64 border border-yellow-500/5 rounded-full animate-pulse"
+            style="animation-delay: 1s;"></div>
+
         <div class="max-w-7xl mx-auto w-full">
-            <p class="mono text-yellow-500 mb-4 tracking-tighter font-bold">// INITIALIZING SYSTEM...</p>
-            <h1 class="text-6xl md:text-9xl font-bold uppercase leading-none mb-6">
-                VOLTAGE <br> <span class="text-yellow-500">& LOGIC.</span>
+            <p class="mono text-yellow-500 mb-6 tracking-[0.2em] font-bold text-xs">// INITIALIZING_LOGIC_CORE</p>
+            <h1 class="text-7xl md:text-9xl font-bold uppercase leading-[0.9] mb-8 tracking-tighter">
+                VOLTAGE <br> <span class="text-yellow-500">SYSTEMS.</span>
             </h1>
-            <p class="max-w-xl text-lg text-stone-400 mb-10 border-l-4 border-yellow-500 pl-6">
-                Preet Pratap Singh Bhati: A Software Developer bridging the gap between high-level Python code and low-level electrical circuits.
+            <p class="max-w-xl text-lg text-zinc-400 mb-12 border-l border-yellow-500/50 pl-8 leading-relaxed">
+                Preet Pratap Singh Bhati — AI & Embedded Systems Engineer working at the intersection of
+                <span class="text-white font-semibold">Computer Vision</span>,
+                <span class="text-white font-semibold">Automation</span>, and
+                <span class="text-white font-semibold">Hardware–Software Integration</span>.
             </p>
-            <div class="flex gap-6">
-                <a href="#projects" class="btn-industrial">Review Projects</a>
-                <a href="#contact" class="border-2 border-stone-700 px-6 py-3 font-bold hover:border-yellow-500 transition-colors">Get in Touch</a>
+            <div class="flex flex-wrap gap-6">
+                <a href="#projects" class="btn-premium">View Systems</a>
+                <a href="#contact" class="btn-outline">Transmit Signal</a>
             </div>
         </div>
     </section>
 
-    <!-- Alternating Content 1: Image Left, Text Right -->
-    <section id="about" class="py-32 px-6">
+    <section id="about" class="py-40 px-6 border-y border-white/5">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row items-center gap-16">
+            <div class="flex flex-col md:flex-row items-center gap-20">
                 <!-- Image Side -->
                 <div class="w-full md:w-1/2 reveal">
-                    <div class="image-container aspect-video flex items-center justify-center bg-stone-800">
-                        <!-- Placeholder for "Electrical/Code" Aesthetic -->
-                        <svg class="w-1/2 opacity-20 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <path d="M2 12h5l2 8 4-16 2 8h5" />
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="mono text-yellow-500 font-bold text-xl">HARDWARE_CORE</span>
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-transparent rounded opacity-25 blur-lg group-hover:opacity-40 transition duration-500">
+                        </div>
+                        <div
+                            class="relative aspect-square flex items-center justify-center bg-zinc-900 border border-white/10 overflow-hidden">
+                            <div class="absolute inset-0 bg-grid opacity-20"></div>
+                            <svg class="w-1/3 text-yellow-500/20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="0.5">
+                                <path d="M2 12h5l2 8 4-16 2 8h5" />
+                            </svg>
+                            <div
+                                class="absolute bottom-6 left-6 mono text-[10px] text-yellow-500/50 uppercase tracking-widest">
+                                Processing_Architecture.v7
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!-- Text Side -->
-                <div class="w-full md:w-1/2 reveal" style="transition-delay: 200ms;">
-                    <h2 class="text-4xl font-bold uppercase mb-6 flex items-center gap-4">
-                        <span class="text-yellow-500">01.</span> The Developer
+                <div class="w-full md:w-1/2 reveal">
+                    <h2 class="text-4xl font-bold uppercase mb-8 flex items-center gap-6">
+                        <span class="text-yellow-500 text-sm mono tracking-widest">[01]</span> The Dev
                     </h2>
-                    <p class="text-stone-400 text-lg mb-6 leading-relaxed">
-                        With a foundation in <span class="text-white font-bold">Python</span> and <span class="text-white font-bold">Java</span>, I approach development with the precision of an electrical engineer. I'm currently mastering <span class="text-yellow-500">Data Structures & Algorithms</span> to build more efficient, scalable systems.
+                    <p class="text-zinc-400 text-lg mb-8 leading-relaxed">
+                        I am a <span class="text-white font-semibold">5th semester B.Tech Computer Science
+                            student</span> with strong hands-on experience in
+                        <span class="text-yellow-500">AI systems, computer vision, embedded hardware, and
+                            automation</span>.
+                        My work spans from writing optimized Python code to deploying real-time systems on
+                        <span class="text-white font-semibold">Arduino, ESP32-CAM, and Raspberry Pi</span>.
                     </p>
-                    <div class="grid grid-cols-2 gap-4 mono text-sm">
-                        <div class="p-4 bg-stone-900 border-l-2 border-yellow-500">
-                            <p class="text-yellow-500">LANGUAGES</p>
-                            <p>Python, Java</p>
+                    <div class="grid grid-cols-2 gap-6 mono text-[11px]">
+                        <div
+                            class="p-6 bg-zinc-900/50 border border-white/5 group hover:border-yellow-500/30 transition-colors">
+                            <p class="text-yellow-500 mb-2 font-bold uppercase tracking-widest">Languages</p>
+                            <p class="text-zinc-300">Python, C, Embedded C</p>
                         </div>
-                        <div class="p-4 bg-stone-900 border-l-2 border-yellow-500">
-                            <p class="text-yellow-500">ALGORITHMS</p>
-                            <p>Learning DSA</p>
+                        <div
+                            class="p-6 bg-zinc-900/50 border border-white/5 group hover:border-yellow-500/30 transition-colors">
+                            <p class="text-yellow-500 mb-2 font-bold uppercase tracking-widest">Focus</p>
+                            <p class="text-zinc-300">AI • CV • IoT</p>
                         </div>
                     </div>
                 </div>
@@ -179,121 +281,265 @@
         </div>
     </section>
 
-    <!-- Horizontal Scrolling Hardware Section -->
-    <section id="hardware" class="py-24 bg-stone-900/50">
+    <section id="hardware" class="py-32 bg-black/20">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
                 <div>
-                    <h2 class="text-4xl font-bold uppercase">Hardware Modules</h2>
-                    <p class="mono text-yellow-500 text-sm">Scroll horizontally to view components →</p>
+                    <h2 class="text-4xl font-bold uppercase tracking-tighter mb-4">Core Modules</h2>
+                    <p class="mono text-yellow-500/70 text-xs tracking-widest uppercase">Hardware Architecture &
+                        Integration</p>
                 </div>
+                <div class="hidden md:block h-[1px] flex-grow mx-12 bg-white/5"></div>
+                <p class="mono text-[10px] text-zinc-500 uppercase tracking-widest">Slide to explore components →</p>
             </div>
-            
-            <div class="horizontal-scroll">
-                <!-- Card 1 -->
-                <div class="min-w-[300px] bg-stone-800 p-8 border-t-4 border-yellow-500 reveal">
-                    <div class="text-5xl mb-6">🔌</div>
-                    <h3 class="text-xl font-bold mb-2">Arduino Ecosystem</h3>
-                    <p class="text-sm text-stone-400">Prototyping automated systems and sensor integration with precision timing.</p>
-                </div>
-                <!-- Card 2 -->
-                <div class="min-w-[300px] bg-stone-800 p-8 border-t-4 border-yellow-500 reveal" style="transition-delay: 100ms;">
-                    <div class="text-5xl mb-6">📡</div>
-                    <h3 class="text-xl font-bold mb-2">ESP32 Series</h3>
-                    <p class="text-sm text-stone-400">Building IoT solutions with WiFi/Bluetooth capabilities for remote monitoring.</p>
-                </div>
-                <!-- Card 3 -->
-                <div class="min-w-[300px] bg-stone-800 p-8 border-t-4 border-yellow-500 reveal" style="transition-delay: 200ms;">
-                    <div class="text-5xl mb-6">📷</div>
-                    <h3 class="text-xl font-bold mb-2">ESP32-CAM</h3>
-                    <p class="text-sm text-stone-400">Implementing computer vision at the edge for smart surveillance projects.</p>
-                </div>
-                <!-- Card 4 -->
-                <div class="min-w-[300px] bg-stone-800 p-8 border-t-4 border-yellow-500 reveal" style="transition-delay: 300ms;">
-                    <div class="text-5xl mb-6">🔋</div>
-                    <h3 class="text-xl font-bold mb-2">Power Mgmt</h3>
-                    <p class="text-sm text-stone-400">Designing efficient circuits for long-term battery-operated hardware deployments.</p>
+
+            <div class="scroll-mask">
+                <div class="marquee-track">
+                    <!-- First Set of Cards -->
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">🔌</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Atmega328P
+                        </h3>
+                        <h4 class="text-xl font-bold mb-4">Arduino Ecosystem</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Designing sensor-driven systems using Arduino
+                            Uno & Nano with real-time control logic.</p>
+                    </div>
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">📡</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">ESP-WROOM-32
+                        </h3>
+                        <h4 class="text-xl font-bold mb-4">IoT Integration</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Developing automation solutions using ESP32
+                            with dual-core WiFi/Bluetooth connectivity.</p>
+                    </div>
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">📷</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Vision Core
+                        </h3>
+                        <h4 class="text-xl font-bold mb-4">ESP32-CAM</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Implementing edge-based computer vision for AI
+                            surveillance and safety applications.</p>
+                    </div>
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">🔋</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Regulated
+                            Output</h3>
+                        <h4 class="text-xl font-bold mb-4">Power Systems</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Building efficient power-optimized embedded
+                            systems for field deployments.</p>
+                    </div>
+
+                    <!-- Second Set of Cards (for seamless loop) -->
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">🔌</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Atmega328P
+                        </h3>
+                        <h4 class="text-xl font-bold mb-4">Arduino Ecosystem</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Designing sensor-driven systems using Arduino
+                            Uno & Nano with real-time control logic.</p>
+                    </div>
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">�</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">ESP-WROOM-32
+                        </h3>
+                        <h4 class="text-xl font-bold mb-4">IoT Integration</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Developing automation solutions using ESP32
+                            with dual-core WiFi/Bluetooth connectivity.</p>
+                    </div>
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">📷</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Vision Core
+                        </h3>
+                        <h4 class="text-xl font-bold mb-4">ESP32-CAM</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Implementing edge-based computer vision for AI
+                            surveillance and safety applications.</p>
+                    </div>
+                    <div class="min-w-[320px] glass p-10 glass-hover group">
+                        <div class="text-3xl mb-8 group-hover:scale-110 transition-transform duration-500">🔋</div>
+                        <h3 class="text-xs mono font-bold text-yellow-500 uppercase tracking-[0.2em] mb-4">Regulated
+                            Output</h3>
+                        <h4 class="text-xl font-bold mb-4">Power Systems</h4>
+                        <p class="text-sm text-zinc-400 leading-relaxed">Building efficient power-optimized embedded
+                            systems for field deployments.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Alternating Content 2: Text Left, Image Right -->
-    <section id="projects" class="py-32 px-6">
+    <section id="projects" class="py-40 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row-reverse items-center gap-16">
-                <!-- Image Side -->
-                <div class="w-full md:w-1/2 reveal">
-                    <div class="image-container aspect-video flex items-center justify-center bg-stone-800">
-                        <svg class="w-1/2 opacity-20 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                            <line x1="8" y1="21" x2="16" y2="21"></line>
-                            <line x1="12" y1="17" x2="12" y2="21"></line>
-                        </svg>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <span class="mono text-yellow-500 font-bold text-xl">PROJECT_OUTPUT</span>
+            <div class="mb-20 reveal">
+                <h2 class="text-5xl font-bold uppercase mb-6 tracking-tighter">Major Deployments</h2>
+                <p class="text-zinc-500 max-w-2xl leading-relaxed">
+                    Building the bridge between intelligent software and physical hardware.
+                    Focusing on real-time processing and edge AI.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card reveal group">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="mono text-[10px] text-yellow-500 font-bold tracking-[0.2em]">01_AI_SURVEILLANCE</span>
+                        <div
+                            class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" />
+                            </svg>
                         </div>
                     </div>
-                </div>
-                <!-- Text Side -->
-                <div class="w-full md:w-1/2 reveal" style="transition-delay: 200ms;">
-                    <h2 class="text-4xl font-bold uppercase mb-6 flex items-center gap-4">
-                        <span class="text-yellow-500">02.</span> Collaboration
-                    </h2>
-                    <p class="text-stone-400 text-lg mb-6 leading-relaxed">
-                        I thrive in team environments, bringing technical expertise and a problem-solving mindset to collaborative projects. Whether it's high-level software architecture or low-level hardware debugging, I ensure the circuit is complete.
+                    <h3 class="text-2xl font-bold mb-4">Women Safety System</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                        AI-powered vision system for gender detection, crowd density analysis, and SOS gesture
+                        recognition in real-time.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4 text-stone-300">
-                            <span class="w-2 h-2 bg-yellow-500"></span>
-                            <span>Agile Team Workflows</span>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Python</span>
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">OpenCV</span>
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">TensorFlow</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal group" style="transition-delay: 100ms;">
+                    <div class="flex justify-between items-start mb-10">
+                        <span class="mono text-[10px] text-yellow-500 font-bold tracking-[0.2em]">02_CLI_UTILS</span>
+                        <div
+                            class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" />
+                            </svg>
                         </div>
-                        <div class="flex items-center gap-4 text-stone-300">
-                            <span class="w-2 h-2 bg-yellow-500"></span>
-                            <span>Cross-functional Communication</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">ChatCMD</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                        Natural language interface for terminal interactions, powered by Google Gemini for seamless
+                        command generation.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Python</span>
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Gemini_API</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal group" style="transition-delay: 200ms;">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="mono text-[10px] text-yellow-500 font-bold tracking-[0.2em]">03_LOCAL_INTELLIGENCE</span>
+                        <div
+                            class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" />
+                            </svg>
                         </div>
-                        <div class="flex items-center gap-4 text-stone-300">
-                            <span class="w-2 h-2 bg-yellow-500"></span>
-                            <span>Documentation & Knowledge Sharing</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Offline AI Friend</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                        A privacy-focused local chatbot running Ollama and LangChain for fully offline intelligent
+                        interactions.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Ollama</span>
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">LangChain</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal group" style="transition-delay: 300ms;">
+                    <div class="flex justify-between items-start mb-10">
+                        <span
+                            class="mono text-[10px] text-yellow-500 font-bold tracking-[0.2em]">04_VOICE_AUTOMATION</span>
+                        <div
+                            class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-yellow-500 group-hover:text-black transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 17L17 7M17 7H7M17 7V17" stroke-width="2" />
+                            </svg>
                         </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI Gmail Assistant</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">
+                        Voice-controlled interface for mail management, enabling AI-generated responses and automated
+                        summarizing.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">SpeechRecog</span>
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Flask</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-32 px-6 bg-yellow-500 text-stone-900">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
-            <div class="w-full md:w-1/2">
-                <h2 class="text-6xl font-bold uppercase tracking-tighter mb-6">Ready to <br>Connect?</h2>
-                <p class="text-xl font-medium mb-8">Send a pulse. Let's build something powerful together.</p>
-                <div class="mono font-bold space-y-2">
-                    <p>EMAIL: PREET.PRATAP@DOMAIN.COM</p>
-                    <p>LOC: IN // SYSTEM_ACTIVE</p>
+    <section id="contact" class="py-40 px-6 relative border-t border-white/5 overflow-hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-yellow-500/10 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-24 items-center relative z-10">
+            <div class="w-full md:w-1/2 reveal">
+                <h2 class="text-6xl md:text-7xl font-bold uppercase tracking-tighter mb-10 leading-[0.9]">Start the
+                    <br><span class="text-yellow-500">Connection.</span>
+                </h2>
+                <div class="space-y-8 mono">
+                    <div class="group cursor-pointer">
+                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-1">Inquiries</p>
+                        <p class="text-xl text-yellow-500 font-bold group-hover:translate-x-2 transition-transform">
+                            preetthakur0625@gmail.com</p>
+                    </div>
+                    <div class="group cursor-pointer">
+                        <p class="text-zinc-500 text-[10px] uppercase tracking-widest mb-1">Current Base</p>
+                        <p class="text-xl text-white font-bold group-hover:translate-x-2 transition-transform">India //
+                            remote_ready</p>
+                    </div>
+                    <div class="flex gap-10 mt-12">
+                        <div class="glow-pulse w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <span class="text-[10px] text-zinc-500 uppercase tracking-[0.3em]">System Status: Open for
+                            Collab</span>
+                    </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/2">
-                <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message Transmitted.');">
-                    <input type="text" placeholder="NAME" class="w-full bg-stone-900 text-white p-4 border-none focus:ring-2 focus:ring-stone-600 outline-none">
-                    <input type="email" placeholder="EMAIL" class="w-full bg-stone-900 text-white p-4 border-none focus:ring-2 focus:ring-stone-600 outline-none">
-                    <textarea placeholder="MESSAGE" rows="4" class="w-full bg-stone-900 text-white p-4 border-none focus:ring-2 focus:ring-stone-600 outline-none"></textarea>
-                    <button class="w-full bg-stone-900 text-yellow-500 py-4 font-bold uppercase tracking-widest hover:bg-stone-800 transition-colors">Transmit Signal</button>
-                </form>
-            </div>
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <!-- Web3Forms Access Key -->
+                <input type="hidden" name="access_key" value="c282a81d-0817-41c5-ab5d-6038e319b4ff">
+
+                <!-- Honeypot Spam Protection -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="NAME" required
+                        class="w-full bg-white/5 text-white p-5 border border-white/5 focus:border-yellow-500/50 outline-none transition-all placeholder:text-zinc-600">
+                    <input type="email" name="email" placeholder="EMAIL" required
+                        class="w-full bg-white/5 text-white p-5 border border-white/5 focus:border-yellow-500/50 outline-none transition-all placeholder:text-zinc-600">
+                </div>
+                <textarea name="message" placeholder="MESSAGE_PAYLOAD" rows="5" required
+                    class="w-full bg-white/5 text-white p-5 border border-white/5 focus:border-yellow-500/50 outline-none transition-all placeholder:text-zinc-600"></textarea>
+
+                <div id="form-status" class="mono text-[10px] uppercase tracking-widest hidden"></div>
+
+                <button type="submit" id="submit-btn" class="btn-premium w-full mt-4">Initiate Protocol</button>
+            </form>
+        </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 px-6 border-t-2 border-stone-800">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <span class="mono text-yellow-500 font-bold">PPSB_PORTFOLIO_V2.0</span>
-            <div class="flex gap-8 text-stone-500 font-bold uppercase text-xs tracking-widest">
-                <a href="#" class="hover:text-yellow-500 transition-colors">GitHub</a>
-                <a href="#" class="hover:text-yellow-500 transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-yellow-500 transition-colors">Twitter</a>
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="mono text-yellow-500 font-bold tracking-widest text-sm">PPSB_STACK_V3.0</span>
+                <p class="text-zinc-600 text-[10px] uppercase tracking-widest">Bridging Carbon and Silicon</p>
             </div>
-            <p class="text-stone-600 text-xs">© 2024 SYSTEM_ALL_RIGHTS_RESERVED</p>
+            <div class="flex gap-12 text-zinc-400 font-bold uppercase text-[10px] tracking-[0.3em]">
+                <a href="https://github.com/PreetThakur25" target="_blank"
+                    class="hover:text-yellow-500 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/preetthakur" target="_blank"
+                    class="hover:text-yellow-500 transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-zinc-300 transition-colors">Documentation</a>
+            </div>
+            <p class="text-zinc-700 text-[9px] mono uppercase tracking-widest">© 2024 ALL_SYSTEMS_OPERATIONAL</p>
         </div>
     </footer>
 
@@ -314,12 +560,56 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // Subtle Parallax for hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('section');
-            hero.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
+        // Form Submission Logic
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerText = "TRANSMITTING...";
+            formStatus.classList.remove('hidden', 'text-red-500', 'text-yellow-500');
+            formStatus.classList.add('text-yellow-500');
+            formStatus.innerText = "// ENCRYPTING_DATA_STREAM...";
+
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                });
+
+                const result = await response.json();
+
+                if (response.status === 200) {
+                    formStatus.innerText = "// SIGNAL_RECEIVED_SUCCESSFULLY.";
+                    contactForm.reset();
+                } else {
+                    formStatus.classList.add('text-red-500');
+                    formStatus.innerText = "// TRANSMISSION_ERROR: " + result.message;
+                }
+            } catch (error) {
+                formStatus.classList.add('text-red-500');
+                formStatus.innerText = "// FATAL_ERROR: CONNECTION_LOST.";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Initiate Protocol";
+                setTimeout(() => {
+                    formStatus.classList.add('hidden');
+                }, 5000);
+            }
         });
     </script>
 </body>
+
 </html>
