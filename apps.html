@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPSB | App Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --accent: #a855f7;
+            --accent-muted: rgba(168, 85, 247, 0.2);
+            --bg-dark: #0A0A0B;
+            --bg-card: #141415;
+            --text-main: #F4F4F5;
+            --text-dim: #A1A1AA;
+            --border-dim: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        h1,
+        h2,
+        h3,
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Elegant Grid Background */
+        .bg-grid {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(20, 20, 21, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-dim);
+        }
+
+        .glass-hover:hover {
+            border-color: rgba(234, 179, 8, 0.3);
+            background: rgba(20, 20, 21, 0.9);
+            transform: translateY(-4px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Industrial but Premium Buttons */
+        .btn-premium {
+            position: relative;
+            padding: 14px 28px;
+            background: var(--accent);
+            color: var(--bg-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--accent);
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
+        }
+
+        .btn-premium:hover {
+            background: transparent;
+            color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-muted);
+        }
+
+        .btn-outline {
+            padding: 14px 28px;
+            border: 1px solid var(--border-dim);
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Marquee Animation */
+        .marquee-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-50% - 0.75rem));
+            }
+        }
+
+        /* Horizontal Scroll Mask */
+        .scroll-mask {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            overflow: hidden;
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding: 2rem 0;
+            scrollbar-width: none;
+        }
+
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Custom Project Card Style */
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Decorative Pulse */
+        .glow-pulse {
+            box-shadow: 0 0 15px var(--accent-muted);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(234, 179, 8, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(234, 179, 8, 0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-grid">
+
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold mono text-[var(--accent)] tracking-tighter">PREET_PRATAP_</a>
+            <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-[0.3em]">
+                <a href="index.html" class="hover:text-yellow-500 transition-colors">01. Hardware</a>
+                <a href="ml.html" class="hover:text-cyan-400 transition-colors">02. ML</a>
+                <a href="agents.html" class="hover:text-green-500 transition-colors">03. Agents</a>
+                <a href="apps.html" class="hover:text-purple-400 transition-colors">04. Apps</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <section id="projects" class="py-24 md:py-40 px-6 min-h-screen">
+        <div class="max-w-7xl mx-auto mt-20">
+            <div class="mb-20 reveal active">
+                <h2 class="text-5xl font-bold uppercase mb-6 tracking-tighter">Applications</h2>
+                <p class="text-zinc-500 max-w-2xl leading-relaxed">Full-stack web applications and scalable cloud solutions.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="project-card reveal group cursor-pointer" onclick="window.location.href='project.html?file=README%20serverless_app.md'" style="transition-delay: 0ms;">
+                    <div class="flex justify-between items-start mb-10">
+                        <span class="mono text-[10px] text-[var(--accent)] font-bold tracking-[0.2em]">01_SERVERLESS_APP</span>
+                        <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[var(--accent)] group-hover:text-black transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 5l7 7-7 7" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Serverless App Architecture</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">A scalable serverless application built using modern cloud infrastructure and microservices.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">AWS</span><span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Node.js</span><span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Serverless</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal group cursor-pointer" onclick="window.location.href='project.html?file=README%20presontor_ai.md'" style="transition-delay: 100ms;">
+                    <div class="flex justify-between items-start mb-10">
+                        <span class="mono text-[10px] text-[var(--accent)] font-bold tracking-[0.2em]">02_PRESONTOR_AI</span>
+                        <div class="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[var(--accent)] group-hover:text-black transition-all">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 5l7 7-7 7" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Presontor AI</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed mb-8">An intelligent presentation assistant leveraging AI to generate and format slide decks dynamically.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Python</span><span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">Generative AI</span><span class="px-3 py-1 bg-white/5 text-[10px] mono text-zinc-300">APIs</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <span class="mono text-yellow-500 font-bold tracking-widest text-sm">PPSB_STACK_V3.0</span>
+                <p class="text-zinc-600 text-[10px] uppercase tracking-widest">Bridging Carbon and Silicon</p>
+            </div>
+            <div class="flex gap-12 text-zinc-400 font-bold uppercase text-[10px] tracking-[0.3em]">
+                <a href="https://github.com/PreetThakur25" target="_blank"
+                    class="hover:text-yellow-500 transition-colors">GitHub</a>
+                <a href="https://www.linkedin.com/in/preetthakur" target="_blank"
+                    class="hover:text-yellow-500 transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-zinc-300 transition-colors">Documentation</a>
+            </div>
+            <p class="text-zinc-700 text-[9px] mono uppercase tracking-widest">© 2024 ALL_SYSTEMS_OPERATIONAL</p>
+        </div>
+    </footer>
+    <script>
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, observerOptions);
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
