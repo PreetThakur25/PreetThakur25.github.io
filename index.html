@@ -196,12 +196,29 @@
     <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html" class="text-xl font-bold mono text-yellow-500 tracking-tighter">PREET_PRATAP_</a>
+            
+            <!-- Desktop Nav -->
             <div class="hidden md:flex space-x-8 text-[10px] font-bold uppercase tracking-[0.3em]">
                 <a href="index.html" class="text-yellow-500 transition-colors">01. Hardware</a>
                 <a href="ml.html" class="hover:text-cyan-400 transition-colors">02. ML</a>
                 <a href="agents.html" class="hover:text-green-500 transition-colors">03. Agents</a>
                 <a href="apps.html" class="hover:text-purple-400 transition-colors">04. Apps</a>
             </div>
+
+            <!-- Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/5 px-6 py-4 flex flex-col space-y-4 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <a href="index.html" class="text-yellow-500 py-2">01. Hardware</a>
+            <a href="ml.html" class="hover:text-cyan-400 transition-colors py-2">02. ML</a>
+            <a href="agents.html" class="hover:text-green-500 transition-colors py-2">03. Agents</a>
+            <a href="apps.html" class="hover:text-purple-400 transition-colors py-2">04. Apps</a>
         </div>
     </nav>
 
@@ -579,6 +596,22 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        if (menuBtn && mobileMenu && menuIcon) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+                } else {
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                }
+            });
+        }
 
         // Form Submission Logic
         const contactForm = document.getElementById('contact-form');
