@@ -178,6 +178,33 @@ body.cursor-hover .cursor-glow {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
 }
 
+/* Static Panels without Hover Reactions */
+.glass-panel.no-hover:hover {
+  border-color: var(--border-light) !important;
+  background: var(--bg-card) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.section-light .glass-panel.no-hover:hover {
+  border-color: rgba(0, 0, 0, 0.85) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.section-light .glass-panel.no-hover::before,
+.section-light .glass-panel.no-hover::after {
+  display: none !important;
+}
+
+.section-light .glass-panel.no-hover:hover .mission-quote {
+  color: inherit !important;
+  text-shadow: none !important;
+}
+
+.section-light .glass-panel.no-hover:hover .intro-text p {
+  color: var(--text-muted) !important;
+}
+
 /* Layout Container */
 .container {
   max-width: 1240px;

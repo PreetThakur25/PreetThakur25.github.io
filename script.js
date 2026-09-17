@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 4. Slight Magnetic Attraction Pull + 3D Card Tilt Effect on Hover
-  const tiltCards = document.querySelectorAll('.glass-panel');
+  const tiltCards = document.querySelectorAll('.glass-panel:not(.no-hover)');
 
   tiltCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
