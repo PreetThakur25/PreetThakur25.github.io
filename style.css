@@ -205,6 +205,19 @@ body.cursor-hover .cursor-glow {
   color: var(--text-muted) !important;
 }
 
+/* Panels with liquid color wave fill & subtle 3D popup, but without mouse tilt */
+.glass-panel.no-tilt {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel.no-tilt:hover {
+  transform: translateY(-6px) scale(1.005) !important;
+}
+
+.section-light .glass-panel.no-tilt:hover {
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 25px var(--accent-glow) !important;
+}
+
 /* Layout Container */
 .container {
   max-width: 1240px;
