@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preet Pratap Singh Bhati // AI, Computer Vision & Embedded Systems Engineer</title>
+  <meta name="description"
+    content="Portfolio of Preet Pratap Singh Bhati - AI & Machine Learning Engineer, IoT & Computer Vision Specialist. Explore featured projects, experience, technical toolkit, and awards.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome / Lucide Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Glow Background Canvas -->
+  <div class="glow-container">
+    <div class="radial-glow glow-1"></div>
+    <div class="radial-glow glow-2"></div>
+    <div class="radial-glow glow-3"></div>
+  </div>
+
+  <!-- Custom Interactive Cursor Glow & Dot -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-name">Preet Pratap Singh Bhati</span>
+        <span class="brand-sep">//</span>
+        <span class="brand-title">AI & Embedded Engineer</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#honors" class="nav-link">Honors</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="resume.pdf" target="_blank" rel="noopener" class="btn-info-icon" aria-label="View Resume" title="View Resume">
+          i
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (Dark Background - Default) -->
+    <section class="hero-section section-dark" id="hero">
+      <div class="hero-typography-bg">
+        <span class="hero-text-giant">PREET BHATI</span>
+      </div>
+
+      <div class="hero-container">
+        <!-- Social Dock Left -->
+        <div class="hero-social-dock">
+          <a href="https://github.com/PreetThakur25" target="_blank" rel="noopener" class="social-icon-btn"
+            aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+            <span class="social-tooltip">GitHub</span>
+          </a>
+          <a href="https://linkedin.com/in/preetthakur" target="_blank" rel="noopener" class="social-icon-btn"
+            aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <span class="social-tooltip">LinkedIn</span>
+          </a>
+          <a href="mailto:preetthakur0625@gmail.com" class="social-icon-btn" aria-label="Email">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="social-tooltip">preetthakur0625@gmail.com</span>
+          </a>
+          <div class="social-line"></div>
+        </div>
+
+        <!-- Center Portrait Layered Cutout -->
+        <div class="hero-portrait-wrapper">
+          <div class="portrait-card glass-panel">
+            <img src="portrait.jpg" alt="Preet Pratap Singh Bhati Portrait" class="hero-portrait-img">
+            <div class="portrait-overlay-glow"></div>
+            <div class="portrait-badge">
+              <i class="fa-solid fa-microchip"></i> Edge AI & CV
+            </div>
+          </div>
+        </div>
+
+        <!-- Subheadline Bottom Right Anchor -->
+        <div class="hero-anchor-text">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span>Based in India &bull; MIET Senior CS</span>
+          </div>
+          <h1 class="hero-subheadline">
+            AI & Machine Learning Engineer <br>
+            <span class="accent-text">&bull; IoT & Computer Vision Specialist</span>
+          </h1>
+          <p class="hero-caption">Designing production edge intelligence, real-time spatial vision systems, and
+            generative agent pipelines.</p>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn-primary">
+              View Work <i class="fa-solid fa-arrow-down-long"></i>
+            </a>
+            <a href="#contact" class="btn-secondary">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MISSION STATEMENT / INTRO BLOCK (Light Section Background) -->
+    <section class="section intro-section section-light" id="about">
+      <div class="container">
+        <div class="intro-glass-card glass-panel reveal-on-scroll">
+          <div class="card-corner-tag">(01 // MISSION)</div>
+          <blockquote class="mission-quote">
+            "Building <span class="highlight-accent">intelligent edge systems</span> and <span
+              class="highlight-accent">scalable AI applications</span> that bridge raw hardware with modern generative
+            intelligence."
+          </blockquote>
+          <div class="intro-grid">
+            <div class="intro-text">
+              <p>I am a Computer Science Senior at <strong>Meerut Institute of Engineering and Technology
+                  (MIET)</strong> working at the nexus of Computer Vision, LLMs, and Embedded Systems. From optimizing
+                YOLO networks on Raspberry Pi to building multi-tenant database infrastructures and generative desktop
+                engines, I turn complex deep learning algorithms into deployable, low-latency hardware and software
+                products.</p>
+            </div>
+            <div class="intro-stats">
+              <div class="stat-item">
+                <span class="stat-number">05+</span>
+                <span class="stat-label">Core Engineering Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">02</span>
+                <span class="stat-label">Specialized Internships</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Hackathon & Summit Honors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="section projects-section section-dark" id="projects">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="header-tag">(02 // SELECTED WORK)</div>
+          <h2 class="section-title">Architected Solutions & AI Systems</h2>
+          <p class="section-subtitle">A showcase of production-ready Computer Vision, Edge Systems, and Full-Stack
+            Engineering.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2026)</span>
+              <span class="project-num">01</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-camera"></i> Computer Vision & Edge IoT</div>
+              <h3 class="project-title">AI-Based Smart Traffic Management System</h3>
+              <p class="project-desc">Dynamic traffic signal timing and density estimation from multi-camera feeds with
+                automated emergency vehicle green-corridor prioritization.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">YOLOv8</span>
+                <span class="pill">OpenCV</span>
+                <span class="pill">ESP32-CAM</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README_Smart_Traffic_Management_System.md" class="project-link">
+                <span>View Architecture & Documentation</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2026)</span>
+              <span class="project-num">02</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-robot"></i> Autonomous Agentic Platform</div>
+              <h3 class="project-title">ARIP (Autonomous AI Resource Intelligence Platform)</h3>
+              <p class="project-desc">DevGathering 2K26 ASI One Special Track winning autonomous engine featuring
+                chain-of-thought reasoning and intent parsing.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">FastAPI</span>
+                <span class="pill">LangChain</span>
+                <span class="pill">Agentic AI</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README%20arip.md" class="project-link">
+                <span>View Hackathon Winner Docs</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2026)</span>
+              <span class="project-num">03</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-terminal"></i> Generative AI & Desktop GUI</div>
+              <h3 class="project-title">ChatCMD (Natural Language Command Prompt)</h3>
+              <p class="project-desc">Desktop AI utility converting natural language prompts into executable system
+                commands featuring approval workflows and persistent shell execution.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">Google GenAI (Gemini)</span>
+                <span class="pill">PySide6</span>
+                <span class="pill">PowerShell</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README%20chat_cmd.md" class="project-link">
+                <span>View Command AI Docs</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2025)</span>
+              <span class="project-num">04</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-shield-halved"></i> Real-Time Vision & Safety</div>
+              <h3 class="project-title">Women Safety Surveillance System</h3>
+              <p class="project-desc">Edge vision solution recognizing real-time SOS gestures, crowd density analysis,
+                and distress triggers with automated threat notification.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">OpenCV</span>
+                <span class="pill">MediaPipe</span>
+                <span class="pill">TensorFlow</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README_Women_Safety_Surveillance_System.md" class="project-link">
+                <span>View Details & Docs</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2025)</span>
+              <span class="project-num">05</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-user-gear"></i> Privacy-Focused Local AI</div>
+              <h3 class="project-title">Offline AI Friend</h3>
+              <p class="project-desc">A privacy-focused local chatbot running Ollama and LangChain for fully offline,
+                zero-telemetry intelligent conversation.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">Ollama</span>
+                <span class="pill">LangChain</span>
+                <span class="pill">Local LLM</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README%20reasoning_agent.md" class="project-link">
+                <span>View Agent Architecture</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2025)</span>
+              <span class="project-num">06</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-microphone-lines"></i> Voice Automation & Speech</div>
+              <h3 class="project-title">AI Gmail Assistant</h3>
+              <p class="project-desc">Voice-controlled interface for email management enabling speech recognition,
+                AI-generated responses, and automated thread summarizing.</p>
+              <div class="project-tech-pills">
+                <span class="pill">SpeechRecognition</span>
+                <span class="pill">Flask</span>
+                <span class="pill">Python</span>
+                <span class="pill">Google GenAI</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README%20speech_to_text.md" class="project-link">
+                <span>View Speech Engine Docs</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 7 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2025)</span>
+              <span class="project-num">07</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-file-invoice"></i> NLP & Transformer Web App</div>
+              <h3 class="project-title">Text Summarizer Engine</h3>
+              <p class="project-desc">AI-powered web application extracting and summarizing text from multi-format
+                documents (PDF, images via OCR, TXT) using HuggingFace models.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">Flask</span>
+                <span class="pill">HuggingFace</span>
+                <span class="pill">Tesseract OCR</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README%20text_summrizer.md" class="project-link">
+                <span>View Summarizer Specs</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 8 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2025)</span>
+              <span class="project-num">08</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-server"></i> Backend & Enterprise Architecture</div>
+              <h3 class="project-title">Vizolane Multi-Tenant School ERP</h3>
+              <p class="project-desc">Enterprise platform featuring logical tenant isolation, strict role-based access
+                controls (RBAC), and relational schemas for education administration.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Python</span>
+                <span class="pill">Flask</span>
+                <span class="pill">PostgreSQL</span>
+                <span class="pill">RBAC</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README_Vizolane_ERP.md" class="project-link">
+                <span>View System Architecture</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 9 -->
+          <article class="project-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="project-header">
+              <span class="project-year">(2025)</span>
+              <span class="project-num">09</span>
+            </div>
+            <div class="project-content">
+              <div class="project-category"><i class="fa-solid fa-user-check"></i> Embedded Systems & Biometrics</div>
+              <h3 class="project-title">Edge Face-Verification Attendance Platform</h3>
+              <p class="project-desc">Hardware-accelerated identity verification system with automated record management
+                directly on embedded nodes.</p>
+              <div class="project-tech-pills">
+                <span class="pill">Raspberry Pi</span>
+                <span class="pill">OpenCV</span>
+                <span class="pill">PostgreSQL</span>
+                <span class="pill">Face Recognition</span>
+              </div>
+            </div>
+            <div class="project-footer">
+              <a href="project.html?file=README_AI_Attendance_System.md" class="project-link">
+                <span>View Hardware Setup & Docs</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROFESSIONAL EXPERIENCE & TIMELINE -->
+    <section class="section experience-section section-light" id="experience">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="header-tag">(03 // CAREER)</div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">Industry experience across AI engineering and IoT hardware development.</p>
+        </div>
+
+        <div class="experience-list">
+
+          <!-- Experience 1 -->
+          <div class="exp-row glass-panel reveal-on-scroll">
+            <div class="exp-id">01</div>
+            <div class="exp-company-role">
+              <h3 class="exp-company">Decode Labs</h3>
+              <span class="exp-role">Artificial Intelligence Intern</span>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-duration">June 2026 &ndash; Present</span>
+              <span class="exp-location"><i class="fa-solid fa-location-dot"></i> Remote</span>
+            </div>
+            <div class="exp-description">
+              <p>Architecting end-to-end AI applications using Computer Vision, Generative AI (Gemini / LangChain /
+                Ollama), and production backend APIs.</p>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="exp-row glass-panel reveal-on-scroll">
+            <div class="exp-id">02</div>
+            <div class="exp-company-role">
+              <h3 class="exp-company">Vizolane Technologies LLP</h3>
+              <span class="exp-role">IoT Developer Intern</span>
+            </div>
+            <div class="exp-meta">
+              <span class="exp-duration">Aug 2025 &ndash; Nov 2025</span>
+              <span class="exp-location"><i class="fa-solid fa-location-dot"></i> On-site / Hybrid</span>
+            </div>
+            <div class="exp-description">
+              <p>Engineered embedded solutions on ESP32-CAM, Raspberry Pi, and Arduino with hardware communication
+                protocols (UART, SPI, I2C).</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TECHNICAL TOOLKIT MATRIX -->
+    <section class="section skills-section section-dark" id="skills">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="header-tag">(04 // STACK)</div>
+          <h2 class="section-title">Technical Toolkit</h2>
+          <p class="section-subtitle">Categorized matrix of languages, AI models, hardware, and dev tooling.</p>
+        </div>
+
+        <div class="skills-grid">
+
+          <!-- Category 1 -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <h3 class="skill-category-title">Languages</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">Java</span>
+              <span class="skill-pill">C</span>
+              <span class="skill-pill">JavaScript</span>
+              <span class="skill-pill">SQL</span>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="skill-category-title">AI & Vision</h3>
+            <div class="skill-pills">
+              <span class="skill-pill highlight">Google GenAI (Gemini)</span>
+              <span class="skill-pill highlight">LangChain</span>
+              <span class="skill-pill highlight">Ollama</span>
+              <span class="skill-pill">YOLOv8</span>
+              <span class="skill-pill">OpenCV</span>
+              <span class="skill-pill">MediaPipe</span>
+              <span class="skill-pill">TensorFlow</span>
+              <span class="skill-pill">FaceNet</span>
+              <span class="skill-pill">InsightFace</span>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="skill-category-title">Backend & GUI</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">Flask</span>
+              <span class="skill-pill">RESTful APIs</span>
+              <span class="skill-pill">PySide6</span>
+              <span class="skill-pill">Streamlit</span>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3 class="skill-category-title">Hardware & IoT</h3>
+            <div class="skill-pills">
+              <span class="skill-pill highlight">ESP32-CAM</span>
+              <span class="skill-pill highlight">Raspberry Pi</span>
+              <span class="skill-pill">Arduino Uno/Nano</span>
+              <span class="skill-pill">UART / SPI / I2C</span>
+            </div>
+          </div>
+
+          <!-- Category 5 -->
+          <div class="skill-card glass-panel reveal-on-scroll" data-tilt>
+            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+            <h3 class="skill-category-title">Database & Dev Tools</h3>
+            <div class="skill-pills">
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">GitHub</span>
+              <span class="skill-pill">Linux</span>
+              <span class="skill-pill">VS Code</span>
+              <span class="skill-pill">Vercel</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HONORS & HACKATHONS -->
+    <section class="section honors-section section-light" id="honors">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <div class="header-tag">(05 // RECOGNITIONS)</div>
+          <h2 class="section-title">Honors & Hackathons</h2>
+          <p class="section-subtitle">National hackathons, summits, and competitive awards.</p>
+        </div>
+
+        <div class="honors-list">
+
+          <div class="honor-item glass-panel reveal-on-scroll">
+            <div class="honor-badge"><i class="fa-solid fa-trophy"></i> WINNER</div>
+            <div class="honor-details">
+              <h3 class="honor-title">ASI One Special Track &ndash; DevGathering 2K26 Hackathon</h3>
+              <p class="honor-desc">Awarded top prize for building <strong>ARIP (Autonomous AI Resource Intelligence
+                  Platform)</strong>.</p>
+            </div>
+            <div class="honor-year">2026</div>
+          </div>
+
+          <div class="honor-item glass-panel reveal-on-scroll">
+            <div class="honor-badge exhibitor"><i class="fa-solid fa-star"></i> EXHIBITOR</div>
+            <div class="honor-details">
+              <h3 class="honor-title">Selected Exhibitor &ndash; AI Impact India Summit 2025</h3>
+              <p class="honor-desc">Represented MIET on a national platform with the <strong>Smart Traffic Management
+                  System</strong> demo.</p>
+            </div>
+            <div class="honor-year">2025</div>
+          </div>
+
+          <div class="honor-item glass-panel reveal-on-scroll">
+            <div class="honor-badge runner"><i class="fa-solid fa-award"></i> 2ND RUNNER-UP</div>
+            <div class="honor-details">
+              <h3 class="honor-title">Trikon Hackathon</h3>
+              <p class="honor-desc">Recognized for high-impact edge hardware and rapid prototyping under competitive
+                timelines.</p>
+            </div>
+            <div class="honor-year">2025</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER & DIRECT CONTACT -->
+    <section class="section footer-contact-section section-dark" id="contact">
+      <div class="container">
+        <div class="contact-card glass-panel reveal-on-scroll">
+          <div class="contact-header-block">
+            <div class="availability-badge">
+              <span class="pulse-dot"></span>
+              <span>Open for AI / Software Engineering roles and technical collaborations.</span>
+            </div>
+            <h2 class="contact-headline">Let's build something <span class="highlight-accent">intelligent
+                together.</span></h2>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-info">
+              <a href="mailto:preetthakur0625@gmail.com" class="contact-method-card">
+                <div class="method-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="method-details">
+                  <span class="method-label">Direct Email</span>
+                  <span class="method-value">preetthakur0625@gmail.com</span>
+                </div>
+                <i class="fa-solid fa-arrow-right method-arrow"></i>
+              </a>
+
+              <a href="tel:+918195082569" class="contact-method-card">
+                <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="method-details">
+                  <span class="method-label">Phone Call / WhatsApp</span>
+                  <span class="method-value">+91 8195082569</span>
+                </div>
+                <i class="fa-solid fa-arrow-right method-arrow"></i>
+              </a>
+
+              <div class="contact-social-links">
+                <a href="https://linkedin.com/in/preetthakur" target="_blank" rel="noopener" class="btn-social">
+                  <i class="fa-brands fa-linkedin-in"></i> linkedin.com/in/preetthakur
+                </a>
+                <a href="https://github.com/PreetThakur25" target="_blank" rel="noopener" class="btn-social">
+                  <i class="fa-brands fa-github"></i> github.com/PreetThakur25
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Inquiry Form with Web3Forms -->
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="c282a81d-0817-41c5-ab5d-6038e319b4ff">
+              <!-- Honeypot Spam Protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="form-group">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name or Company" required>
+              </div>
+              <div class="form-group">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="name@company.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message" class="form-label">Project Details / Message</label>
+                <textarea id="message" name="message" class="form-input form-textarea" rows="4"
+                  placeholder="Tell me about your project or opportunity..." required></textarea>
+              </div>
+
+              <div id="formStatus" class="form-status-msg" style="display: none;"></div>
+
+              <button type="submit" id="submitBtn" class="btn-primary form-submit-btn">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <footer class="footer-bottom">
+          <div class="footer-copy">
+            &copy; 2026 Preet Pratap Singh Bhati. Designed with Editorial Dark Aesthetic.
+          </div>
+          <a href="#hero" class="back-to-top">
+            <span>Back to Top</span>
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
